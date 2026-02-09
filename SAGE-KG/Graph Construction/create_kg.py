@@ -4,7 +4,7 @@ import re
 import numpy as np
 import pickle
 from collections import defaultdict
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
@@ -72,10 +72,8 @@ def generate_entity_embeddings(entities, embedding_model, batch_size=2048):
     
     for i in tqdm(range(0, len(entities_list), batch_size), desc="Generating entity embeddings"):
         batch = entities_list[i:i + batch_size]
-        embeddings = embedding_model.get_text_embedding_batch(batch, show_progress_bar=False)
+        embeddings = embedding_model.encode(batch, show_progress_bar=False)
         for entity, embedding in zip(batch, embeddings):
-            if isinstance(embedding, list):
-                embedding = np.array(embedding, dtype=np.float32)
             entity_embeddings[entity] = embedding
     
     return entity_embeddings
@@ -98,10 +96,8 @@ def generate_chunk_embeddings(chunk_triplet_mapping, embedding_model, batch_size
         batch_chunks = chunks_list[i:i + batch_size]
         batch_texts = chunk_texts[i:i + batch_size]
         
-        embeddings = embedding_model.get_text_embedding_batch(batch_texts, show_progress_bar=False)
+        embeddings = embedding_model.encode(batch_texts, show_progress_bar=False)
         for chunk_id, embedding in zip(batch_chunks, embeddings):
-            if isinstance(embedding, list):
-                embedding = np.array(embedding, dtype=np.float32)
             chunk_embeddings[chunk_id] = embedding
     
     return chunk_embeddings
@@ -197,10 +193,10 @@ def main():
     parser.add_argument("--graph-file", default="knowledge_graph.pickle", help="Output graph pickle file")
     parser.add_argument("--chunk-file", default="chunk_data.pickle", help="Output chunk data pickle file")
     parser.add_argument("--tfidf-file", default="tfidf_data.joblib", help="Output TF-IDF joblib file")
-    parser.add_argument("--embedding-model", default="BAAI/bge-large-en-v1.5", help="Embedding model name")
+    parser.add_argument("--embedding-model", default="all-mpnet-base-v2", help="Embedding model name")
     args = parser.parse_args()
     
-    embedding_model = HuggingFaceEmbedding(model_name=args.embedding_model)
+    embedding_model = SentenceTransformer(args.embedding_model)
     
     try:
         with open(args.input_triplets, "r", encoding="utf-8") as f:

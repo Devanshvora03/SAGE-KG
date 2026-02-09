@@ -1,68 +1,63 @@
 import argparse
-from typing import List
+from typing import List, Tuple
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 
-def load_test_pairs_from_markdown(md_file_path: str) -> List[tuple]:
-    with open(md_file_path, "r", encoding="utf-8") as f:
-        content = f.read()
-
+def parse_ground_truth_and_retrieved(md_path: str) -> List[Tuple[str, str]]:
     pairs = []
-    gt, rt = None, None
-    lines = content.splitlines()
-    i = 0
-    while i < len(lines):
-        line = lines[i].strip()
-        if line.startswith("**Ground Truth:**"):
-            gt = line.replace("**Ground Truth:**", "").strip()
-        elif line.startswith("**Retrieved Answer:**"):
-            rt = line.replace("**Retrieved Answer:**", "").strip()
-            if gt and rt:
-                pairs.append((gt, rt))
-                gt, rt = None, None
-        i += 1
+    gt = pred = None
+
+    with open(md_path, encoding="utf-8") as f:
+        for line in f:
+            s = line.strip()
+            if s.startswith("**Ground Truth:**"):
+                gt = s.replace("**Ground Truth:**", "", 1).strip()
+            elif s.startswith("**Retrieved Answer:**"):
+                pred = s.replace("**Retrieved Answer:**", "", 1).strip()
+                if gt is not None and pred is not None:
+                    pairs.append((gt, pred))
+                    gt = pred = None
+            elif s == "---":
+                # optional reset
+                gt = pred = None
+
+    # last pair if any
+    if gt is not None and pred is not None:
+        pairs.append((gt, pred))
+
     return pairs
 
-def embed_sentences(sentences: List[str], model) -> np.ndarray:
-    return model.encode(sentences, convert_to_numpy=True, show_progress_bar=False)
+def compute_mean_cosine_similarity(gts: List[str], preds: List[str], model_name="all-MiniLM-L6-v2") -> float:
+    if not gts:
+        return 0.0
 
-def retrieval_similarity(retrieved: List[str], gold: List[str], model, verbose: bool = False) -> float:
-    assert len(retrieved) == len(gold), "Input lists must be of same length"
+    model = SentenceTransformer(model_name)
+    gt_emb = model.encode(gts, convert_to_numpy=True, show_progress_bar=True)
+    pred_emb = model.encode(preds, convert_to_numpy=True, show_progress_bar=False)
 
-    retr_embs = embed_sentences(retrieved, model)
-    gold_embs = embed_sentences(gold, model)
-
-    sims = [
-        cosine_similarity(retr_embs[i].reshape(1, -1), gold_embs[i].reshape(1, -1)).item()
-        for i in range(len(retrieved))
-    ]
-
-    if verbose:
-        for idx, score in enumerate(sims, start=1):
-            print(f"Pair {idx} similarity: {score:.4f}")
-
-    return float(np.mean(sims))
+    sims = cosine_similarity(gt_emb, pred_emb).diagonal()
+    return float(np.mean(sims)) * 100.0
 
 def main():
-    parser = argparse.ArgumentParser(description="Retrieval Similarity Evaluation")
-    parser.add_argument("--input-file", default="input_data.md", help="Path to input Markdown file")
-    parser.add_argument("--verbose", action="store_true", help="Print individual similarities")
+    parser = argparse.ArgumentParser(description="Semantic Similarity (cosine) between GT and Retrieved answers")
+    parser.add_argument("--input", "-i", default="output.md", help="Evaluation markdown file")
+    parser.add_argument("--model", default="all-MiniLM-L6-v2", help="sentence-transformers model")
     args = parser.parse_args()
 
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-
-    test_pairs = load_test_pairs_from_markdown(args.input_file)
-
-    if not test_pairs:
-        print("No Ground Truth / Retrieved Answer pairs found.")
+    pairs = parse_ground_truth_and_retrieved(args.input)
+    if not pairs:
+        print("No evaluation pairs found in file.")
         return
 
-    gold_texts = [gt for gt, _ in test_pairs]
-    retrieved_texts = [rt for _, rt in test_pairs]
+    gts = [gt for gt, _ in pairs]
+    preds = [pred for _, pred in pairs]
 
-    rs_score = retrieval_similarity(retrieved_texts, gold_texts, model, args.verbose) * 100.0
-    print(f"Average Retrieval Similarity (R-S): {rs_score:.4f} %")
+    score = compute_mean_cosine_similarity(gts, preds, args.model)
+
+    print(f"Number of pairs          : {len(pairs):3d}")
+    print(f"Model                    : {args.model}")
+    print(f"Average Cosine Similarity: {score:6.2f} %")
 
 if __name__ == "__main__":
     main()

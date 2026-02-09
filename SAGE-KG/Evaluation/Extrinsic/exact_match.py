@@ -4,44 +4,79 @@ import re
 from typing import List, Tuple
 
 def normalize(text: str) -> str:
+    """Very strict normalization for exact match"""
+    if not text:
+        return ""
     text = text.lower()
     text = text.translate(str.maketrans('', '', string.punctuation))
-    return " ".join(text.split()).strip()
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip()
 
-def exact_match(test_pairs: List[Tuple[str, str]]) -> float:
-    N = len(test_pairs)
-    matches = sum(1 for gt, pred in test_pairs if normalize(gt) == normalize(pred))
-    return matches * 100 / N if N > 0 else 0.0
+def exact_match_score(pairs: List[Tuple[str, str]]) -> float:
+    if not pairs:
+        return 0.0
+    matches = sum(1 for gt, pred in pairs if normalize(gt) == normalize(pred))
+    return (matches / len(pairs)) * 100
 
-def extract_pairs_from_markdown(content: str) -> List[Tuple[str, str]]:
+def parse_qa_pairs_from_md(filepath: str) -> List[Tuple[str, str]]:
+    """
+    Parse markdown in format:
+    **Question:** ...
+    **Ground Truth:** ...
+    **Retrieved Answer:** ...
+    ---
+    """
     pairs = []
-    gt, pred = None, None
-    
-    lines = content.splitlines()
-    i = 0
-    while i < len(lines):
-        line = lines[i].strip()
-        if line.startswith("**Ground Truth:**"):
-            gt = line.replace("**Ground Truth:**", "").strip()
-        elif line.startswith("**Retrieved Answer:**"):
-            pred = line.replace("**Retrieved Answer:**", "").strip()
-            if gt and pred:
-                pairs.append((gt, pred))
-                gt, pred = None, None
-        i += 1
+    current = {"q": None, "gt": None, "pred": None}
+
+    with open(filepath, encoding="utf-8") as f:
+        for line in f:
+            line = line.rstrip()
+            stripped = line.strip()
+
+            if stripped.startswith("**Question:**"):
+                if current["gt"] and current["pred"]:
+                    pairs.append((current["gt"], current["pred"]))
+                current = {"q": stripped.replace("**Question:**", "", 1).strip(), "gt": None, "pred": None}
+
+            elif stripped.startswith("**Ground Truth:**"):
+                current["gt"] = stripped.replace("**Ground Truth:**", "", 1).strip()
+
+            elif stripped.startswith("**Retrieved Answer:**"):
+                current["pred"] = stripped.replace("**Retrieved Answer:**", "", 1).strip()
+
+            elif stripped == "---" or stripped == "":
+                if current["gt"] and current["pred"]:
+                    pairs.append((current["gt"], current["pred"]))
+                    current = {"q": None, "gt": None, "pred": None}
+
+    # last one
+    if current["gt"] and current["pred"]:
+        pairs.append((current["gt"], current["pred"]))
+
     return pairs
 
 def main():
-    parser = argparse.ArgumentParser(description="Exact Match Evaluation")
-    parser.add_argument("--input-file", default="input_data.md", help="Path to input Markdown file")
+    parser = argparse.ArgumentParser(description="Exact Match Evaluation (strict normalization)")
+    parser.add_argument("--input", "-i", default="output.md", help="Markdown file with evaluation results")
+    parser.add_argument("--output", "-o", default=None, help="Optional: save score to file")
     args = parser.parse_args()
 
-    with open(args.input_file, "r", encoding="utf-8") as f:
-        content = f.read()
+    pairs = parse_qa_pairs_from_md(args.input)
+    if not pairs:
+        print("No valid (Ground Truth, Retrieved Answer) pairs found.")
+        return
 
-    test_pairs = extract_pairs_from_markdown(content)
-    em_score = exact_match(test_pairs)
-    print(f"Exact Match Score: {em_score:.4f} %")
+    score = exact_match_score(pairs)
+
+    print(f"Number of pairs evaluated : {len(pairs):3d}")
+    print(f"Exact Match Score         : {score:6.2f} %")
+
+    if args.output:
+        with open(args.output, "w", encoding="utf-8") as f:
+            f.write(f"exact_match_score: {score:.4f}\n")
+            f.write(f"num_pairs: {len(pairs)}\n")
+        print(f"Score saved to: {args.output}")
 
 if __name__ == "__main__":
     main()
