@@ -1,0 +1,101 @@
+pair,question,ground_truth,retrieved_answer,judge_average,human_evaluated
+1,Who starred in the 1991 American action comedy film The Hard Way and was featured on the roster of Rawkus Records?,Mos Def,Mos Def,10.0,10
+2,"What staff member of the editor of ""London Review of Books"" wrote a semi-fictionalised account of working for her?",Nina Stibbe,Nina Stibbe,10.0,10
+3,"What actress is known for a starring role in Robert Bresson's ""Pickpocket"" and has also been directed by Just Jaeckin, a former photographer?",Marika Nicolette Green,Marika Nicolette Green,10.0,10
+4,Which had a bigger population in the 2016 census: Queens or Staten Island?,Queens,Queens had a bigger population than Staten Island in the 2016 census.,10.0,10
+5,What is the character of fictional character Claire Fraser in a British-American television drama series developed by Ronald D. Moore ?,Claire is a married World War II nurse,Claire Fraser is a nurse during World War II who travels from 1946 to Scotland in 1743.,9.0,8
+6,Which rebellion did Sir John Wedderburn and Charles Edward Stuart fight for that ended with defeat at the Battle of Culloden?,the unsuccessful Jacobite uprising of 1745,Jacobite uprising of 1745,9.0,10
+7,In Person is a 1935 film starring an actress born in what year?,1911,Ginger Rogers was born in 1911.,10.0,10
+8,What where both Hawker Hurricane and No. 1455 Flight apart of?,Royal Air Force,Royal Air Force,10.0,10
+9,The Shrewsbury & Newport Canals Trust promotes the restoration of what navigable canal in England?,Shropshire Union Canal,newport arm of the shropshire union canal,8.2,9
+10,Were both the Battle of Stones River and the Battle of the Ch'ongch'on River fought in the 19th century?,no,No.,10.0,10
+11,The Worst Journey in the World is a memoir written by which English explorer of Antarctica?,Apsley George Benet Cherry-Garrard,Apsley George Benet Cherry-Garrard,10.0,10
+12,What year was the alphabetically first writer of Fairytale of New York born?,1955,1957,0.6,0
+13,"Helen Margaret Lederer appeared on a BBC television sitcom created by Jennifer Saunders, that is based on what 1990 sketch?",French & Saunders,French & Saunders,10.0,10
+14,David Huntsinger has worked with this gospel singer born in the month of July?,Larnelle Harris,Latice Crawford,1.2,0
+15,"Which film came out first, Still Kicking: Six Artistic Women of Project Arts & Longevity or Time Bombs?",Still Kicking: Six Artistic Women of Project Arts & Longevity,Still Kicking: Six Artistic Women of Project Arts & Longevity,10.0,10
+16,Which county located in the commonwealth of Kentucky is Kentucky Route 393 (KY 393) a state highway in,"Oldham County, Kentucky",Kentucky Route 393 (KY 393) is a state highway in Oldham County.,10.0,10
+17,"The House of Hanover held the British throne until after Victoria's death, when it was past to the dynasty that ruled which duchy?",Ernestine,Saxe-Coburg and Gotha,6.8,0
+18,Edmundas Malūkas was the former mayor of the lake resort how far west of the capital of Lithuania?,28 km,28 km west,10.0,10
+19,"How many records did the boy band who released ""Said and Done"" sell worldwide as of 2013?",25 million,25 million records,10.0,10
+20,During which months of the year does the goalkeeper for Bengaluru FC play?,November to March,November to March,10.0,10
+21,"Who is younger, Terry Glaze or Hayley Williams?",Hayley Williams,Hayley Williams is younger.,10.0,10
+22,"Of four Harry S. Truman Supreme Court candidates, who was the 53rd United States Secretary of the Treasury and the 13th Chief Justice of the United States?",Fred M. Vinson,Fred M. Vinson,10.0,10
+23,The hip hop group Strange Fruit Project relates its name to what song by a famous female jazz musician and singer known for her vocal delivery and improvisational skills?,"""Strange Fruit""","""Strange Fruit"" performed by Billie Holiday",10.0,10
+24,What country is both Thornton–Cleveleys railway station and Poulton-le-Fylde railway station located?,England,United Kingdom,8.6,9
+25,"Who was born first, Mary Collins or Polly Draper?",Mary Collins,Mary Collins,10.0,10
+26,Are both Ixia and Rhexia a plant genus?,yes,Yes.,10.0,10
+27,What was the third studio album released by Richard Melville Hall?,Everything Is Wrong,The recipe,0.0,0
+28,What foundation do scholars give for the likelihood of collaboration on a William Shakespeare Play written between 1588 and 1593?,linguistic analysis,linguistic analysis,10,10
+30,What is one element of House dance where the dancer ripples his or her torso back and forth?,the jack,lofting,0.8,0
+31,Richford is a town in Franklin County Vermont governed by what kind of body?,town meeting legislative body,town meeting legislative body,10.0,10
+32,"The castle where ""Spook Squad"" was filmed is in what part of Scotland?","Aberdeenshire, Scotland",Aberdeenshire,9.0,9
+33,Are both Grapico and Izze artificially flavored soft drinks?,no,No.,10.0,10
+34,"The role of ""Celene"" in the film ""Walk All over Me"" was played by an actress that voices what role in the ""Starcraft 2"" triolgy?",Sarah Kerrigan,Queen of Blades,8.4,0
+35,Was the Metropolitan Life Insurance Company Tower [Met Life Tower] or the 15 Hudson Yards building designed by the firm of Napoleon LeBrun & Sons?,The Metropolitan Life Insurance Company Tower,Metropolitan Life Insurance Company Tower was designed by Napoleon LeBrun & Sons.,10.0,10
+36,In what year was the director of the 2016 American-British biographical drama film which stars Rebecca Hall as Christine Chubbuck born?,1983,Antonio Campos was born in 1983.,10.0,10
+37,"In what year was the Sayrevill, New Jersey rock band that Frankie LaRocka played drums for formed?",1983,1983,10.0,10
+38,Which Genus has more species Eucryphia or Lepidozamia ?,Eucryphia,Eucryphia,10.0,10
+39,"In what year did the playwright who wrote ""The City Heiress"" die?",1689,1689,10.0,10
+40,What is the origin of the National Space Olympiad and Kalpana Chawla ?,Indian,India,10.0,10
+41,"Who were the directors of the 2009 American science fiction film starring the actor who played Dexter Morgan in the Showtime TV Network series ""Dexter""?",Mark Neveldine and Brian Taylor,Marc Forster,0.2,0
+42,What is common between Matt Vasgersian and Michael Casey?,American,Both Matt Vasgersian and Michael Casey have served as play-by-play announcers for the San Diego Padres.,3.8,5
+43,"Notable works of Bailee Madison includes a 2011 American Romantic comedy film that was directed by Dennis Dugan, and written by Allan Loeb and who?",Timothy Dowling,Timothy Dowling,10.0,10
+44,Who starred as an American attorney in Grey Gardens?,Ken Howard,Lois Erdmann Wright,0.4,0
+45,Is Rutgers University or Brown University public?,Rutgers University,Rutgers University is public. Brown University is private.,10.0,10
+46,"What was the first air date that the CGI animated series that preceded ""Mixels""?","January 16, 2013","March 31, 1993",0.0,0
+47,During the Carnival in Rio de Janeiro who is the official singer of the samba school Mangueira?,José Bispo Clementino dos Santos,The factual context does not provide information about the official singer of the samba school Mangueira during the Carnival in Rio de Janeiro.,0.0,0
+48,Co-Dependents' Day is an episode of a tv show season which began when?,"Sunday, November 2, 2003","November 2, 2003",9.0,10
+49,The 53rd National Hockey League All-Star Game took place at the indoor arena that was completed in what year?,1998,1982,0.4,0
+50,The Schumann–Runge bands are named for at least one German what?,mathematician,mathematician,10.0,10
+51,"Is Ashland, New Hampshire or Plymouth Regional High School located near the Scribner-Fellows State Forest?",Ashland is home to Scribner-Fellows State Forest,"Ashland, New Hampshire is located near the Scribner-Fellows State Forest.",9.6,10
+52,"which American actress, singer, and songwriter too the tour of  I Stand tour",Idina Kim Menzel,Elle King,0.4,0
+53,"What Japanese Auto Manufacturer headquarted in Minato, Tokyo, Japan did Nissan aquire controlling interest in?",Mitsubishi,Mitsubishi Motors Corporation,10.0,10
+54,Are Control Room and Meeting Resistance both documentary films that involve Iraq?,yes,Yes.,10.0,10
+55,What is the name the French give to the war during which the Prussians occupied the Pavillon du Butard?,War of 1870,War of 1870,10.0,10
+56,Japanese Weekend School of New York has offices in the entertainment complex in what section of New Rochelle?,Downtown,New Roc City,8.0,0
+57,"author of the popular ""Getting Started in Electronics"" founded Micro Instrumentation and Telemetry Systems (MITS) in what state?","Albuquerque, New Mexico",New Mexico,8.0,8
+58,What is the name of the process used by a company that is located in New Jersey and invented Hexachrome?,CMYKOG process,pantone matching system (pms),0.8,0
+59,The Northern Chamber Orchestra gives concerts at what estate owned by the National Trust?,Tatton Park,Tatton Park,10.0,10
+60,"What organization is known for having a president who was convicted of felony charges that was harbored by his brother, another high ranking member?",FLDS Church,Oklahoma chapter of the NAACP,0.0,0
+61,What dynasty was the creator of Mouten Cadet wine a part of?,Rothschild banking dynasty,House of Rothschild,10.0,10
+62,Were both Sinclair Research and the Wave Mate Bullet founded in the 1970s?,yes,yes,10.0,10
+63,"What actor from ""Willow"" also starred in ""The Usual Suspects""?",Kevin Elliot Pollak,Kevin Elliot Pollak,10.0,10
+64,"Who was a pianist, Maro Ajemian or Richard C. Sarafian?",Maro Ajemian,Maro Ajemian,10.0,10
+65,"What car did the German rally driver, who won victories for Fiat, Opel, Lancia, and Audi drive?",The Lancia Rally,lancia rally (tipo 151),9.0,10
+66,Santa Bring My Baby Back was released on which fourth Elvis studio album in 1957?,Elvis' Christmas Album,Elvis' Christmas Album,10.0,10
+67,Do The Importance of Being Icelandic and The Five Obstructions belong to different film genres ?,no,Yes.,0.0,0
+68,Which founding member drew critical acclaim as a bass guitarist with melodic basslines  on Murmur?,"Mike"" Mills",mike mills,9.0,10
+69,"Dorothy Sarnoff's personal client list included what AMerican novelist, who has sold over 800 million copies of her books?",Danielle Fernandes Dominique Schuelein-Steel,Danielle Steel,9.0,10
+70,The Lady Craved Excitement was a film that featured the British character actor originally of what nationality?,South African-born,British,0,0
+71,What broadcasting company did both Andrew Collins and Stuart Maconie of Collins and Maconie's Hit Parade both work together from 1194 to 1197?,BBC,bbc radio 1,9.0,10
+72,Which  princess of French origin did Conrad IV of Germany married to,Isabella II,No information on a French princess married to Conrad IV of Germany is provided.,0,0
+73,Bridge of Spies stars a Soviet intelligence officer with what name?,Rudolf Abel,rudolf ivanovich abel,10.0,10
+74,Who set Nietzche's philosophical novel to music?,Richard Strauss,richard strauss,10.0,10
+75,W. Tresper Clarke High School is in what county?,Nassau County,Nassau County,10.0,10
+77,Tommy Swerdlow co-wrote the screenplay of what film directed by Jon Turteltaub?,Cool Runnings,3 ninjas,0,0
+78,The southern terminus of State Route 102 is located in a town on the southwestern side of an island know to locals as what?,the backside,tremont,0,0
+79,Michał Wiśniowiecki was related to the King of Poland and Grand Duke of Lithuania Michał Korybut Wiśniowiecki in what way?,grandfather,Michał Wiśniowiecki is the same person as King of Poland and Grand Duke of Lithuania Michał Korybut Wiśniowiecki.,0,0
+80,What sports club based in Hamburg Germany had a Persian born football player who played for eight seasons?,Mehdi Mahdavikia,fc st. pauli,0,0
+81,"What song by the American rapper Coolio is on his greatest hits album ""Fantiastic Voyage"" and samples from a Stevie Wonder song?",Gangsta's Paradise,"There is no song by Coolio on his greatest hits album ""Fantastic Voyage"" that samples from a Stevie Wonder song.",0.2,0
+82,What is the city where Orville Siegfried went to college and that is located in Jackson county?,"Lee's Summit, Missouri",lee's summit,9.0,10
+83,"Kacha, Sevastopol is a settlement that is part of a sovereign state bordered on the northwest by which country?",Belarus,Belarus,10.0,10
+84,Still Reigning is a live performance DVD that showcases an album described by Kerrang! as what?,the heaviest album of all,Reign in Blood,1.6,8
+85,What type of bank organization is Pondicherry Gramin Bank that it operates in different States of India?,Regional Rural Bank,regional rural bank,10.0,10
+86,"Which genus of flowering plants has the most species, Caesalpinia or Achimenes?",Caesalpinia,Caesalpinia,10.0,10
+87,"How long does the lower level degree program, offered at Helene Fuld College of Nursing, typically last?",two years,two years,10.0,10
+88,What group of people are described as semi-nomadic and speak the Semitic language ?,Semitic people,Tigrinya ethnic group,3.8,0
+89,What Italian region does Slinzega come from?,Lombardy,Lombardy,10.0,10
+90,Suzie Toase is best known for her role as Alecto Carrow in the Part 2 of a movie directed by who?,David Yates,David Yates,10.0,10
+91,The city that contains the Yunnan Provincial Museum is also known by what nickname?,Spring city,spring city,10.0,10
+92,Are Tetrastigma and Spruce both types of plants?,yes,yes,10.0,10
+93,What did an English former footballer purchase in march 2009?,50 JJB Sports Fitness Clubs,The provided facts do not contain information about an English former footballer purchasing anything in March 2009.,0.0,0
+94,"Davy Crockett, King of the Wild Frontier:and Herbie Rides Again were both by which company?",Disney,Walt Disney Productions,10.0,10
+95,Ashly Burch is known for voicing Aloy in a video game released in what year?,2017,2017,10.0,10
+96,"Which former ""Home and Away"" actor stars in the film ""Office Uprising""?",Brenton Thwaites,Brenton Thwaites,10.0,10
+97,Are Out Traveler and Reader's Digest both magazines?,yes,yes,10.0,10
+98,In what year did Mets fans start taking New York City Bus: Q48 to watch home games?,2009,No information provided.,0.0,0
+99,When is the birthday of the British-Irish heiress who worked on the Optimist In Black studio album?,9 November 1967,The birthday is not provided in the given facts.,0.0,0
+100,"Which aired first, Life After People or Werner Herzog Eats His Shoe?",Werner Herzog Eats His Shoe,Werner Herzog Eats His Shoe aired first.,10.0,10
+101,"In what capacity did the author of the book,  An Inconvenient Truth,  serve in the United States government ?",Vice President,Al Gore served as Vice President of the United States.,10.0,10
+102,The Jodrell Bank Observatory was established in 1945 by what English physicist and radio astronomer?,Sir Alfred Charles Bernard Lovell,Sir Alfred Charles Bernard Lovell,10.0,10

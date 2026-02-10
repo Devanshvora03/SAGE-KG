@@ -1,0 +1,383 @@
+subject,predicate,object,file_id
+this volume,has,"subject ""central concepts""",semeval
+contemporary political debate,occurs_in,this volume,semeval
+defendant,was released from,custody,semeval
+custody,occurs_in,defendant,semeval
+date,is,march 2,semeval
+march 2,occurs_in,year 2001,semeval
+ecotec,built by,plant,semeval
+chevy malibu,uses,ecotec,semeval
+cobalt,uses,ecotec,semeval
+ecotec,used in,chevy malibu,semeval
+ecotec,used in,cobalt,semeval
+fried cheese,used as,element in a dish,semeval
+dish,includes,fried cheese,semeval
+the castle,is located in,the museum,semeval
+museum,located in,unspecified location,semeval
+the castle,belongs_to,an unknown organization,semeval
+the museum,belongs_to,an unknown organization,semeval
+clubs,falling into,foreign ownership,semeval
+english premier league clubs,is,more and more,semeval
+foreign ownership,occurs_in,english premier league,semeval
+man,was carried into,police car,semeval
+police car,belongs_to,law enforcement agency,semeval
+coleraine times,located_in,coleraine,semeval
+police car,occurs_in,scene_of_crime,semeval
+bunn,has,35600 single-cup pod brewers,semeval
+35600 single-cup pod brewers,includes,problem_with_drawer_opening_unexpectedly_during_brew_cycle,semeval
+drawer of coffeemaker,causes,burn_hazard_to_consumers,semeval
+coffeemaker,belongs_to,bunn,semeval
+burn_hazard_to_consumers,occurs_in,environment_of_coffeemakers,semeval
+probe tube,introduced into,reaction container,semeval
+reaction container,located in,entity not specified,semeval
+probe tube,uses,reaction container,semeval
+reaction container,contains,medium,semeval
+medium,occurs_in,reaction container,semeval
+david mamet,took questions from,audience,semeval
+audience,asked questions to,david mamet,semeval
+david mamet,shared his views on,television,semeval
+david mamet,shared his views on,democracy of culture,semeval
+david mamet,shared his views on,english accent,semeval
+chapter,points out,importance of new employee orientation,semeval
+new employee orientation,includes,important things to cover,semeval
+chapter,lists,some important things to cover,semeval
+monitoring station,receives,signal,semeval
+signal,through,communication device,semeval
+combined signal,processed,to retrieve gps data,semeval
+gps data,belongs_to,monitoring station,semeval
+correction personnel,sought to,locate and apprehend offenders,semeval
+offenders,absconded from,parole officers,semeval
+offenders,jointly sought to,locate and apprehend offenders,semeval
+police personnel,sought to,locate and apprehend offenders,semeval
+probation officers,absconded from,offenders,semeval
+entity a,used by,correction personnel,semeval
+entity a,used by,police personnel,semeval
+place where entity a occurred,is,this approach,semeval
+book,major theme of,the beauty of a dream,semeval
+it,spilled,more than 53000 gallons of crude oil,semeval
+surrounding marshes,includes,it,semeval
+it,occurs_in,surrounding marshes,semeval
+crude oil,is_spilled_by,it,semeval
+hurricane,causes,it,semeval
+studies,was focused on,older adults,semeval
+older adults,lived at,home,semeval
+home,located_in,older adults' living situation,semeval
+studies,occurred_in,unspecified_time_period,semeval
+unspecified_time_period,includes,eighteen_studies,semeval
+diseases,caused by,gene mutations,semeval
+gene mutations,located on,x chromosome,semeval
+x chromosome,belongs_to,sex chromosomes,semeval
+tree,grows,well,semeval
+tree,has,size,semeval
+size,is,correlated with,semeval
+growth,of,tree,semeval
+state capital,located in,place b,semeval
+bruno,is,part of mischief,semeval
+mischief,includes,filthy rats,semeval
+filthy rats,proliferate,sewer,semeval
+sewer,is,disgusting sewer,semeval
+mummified cat,was found in,live trap,semeval
+live trap,contains,mummified cat,semeval
+live trap,has,empty dish,semeval
+empty dish,is located in,live trap,semeval
+stories,are narrated through,dance,semeval
+foundry,has,manhole frames,semeval
+foundry,has,utility covers,semeval
+foundry,has,airport castings,semeval
+foundry,has,drainage products,semeval
+foundry,has,trench grates,semeval
+foundry,has,hydrant components,semeval
+foundry,has,valve components,semeval
+foundry,has,industrial castings,semeval
+the air,has,smell of burning plastic,semeval
+entity,has,pen,semeval
+entity,widely read by,younger part of population,semeval
+proletariat,located_in,freuch,semeval
+proletariat,belongs_to,mood,semeval
+mood,occurs_in,younger part of the population,semeval
+receiver,is outputting,tone,semeval
+your_deva_5,occurs_in,environment,semeval
+tone,is_same_as,tone_output_by_receiver,semeval
+yesterday,occurs_in,at least 12 people were killed,semeval
+lahore,located_in,pakistan,semeval
+a squad of heavily armed militants,stormed,police training school,semeval
+police training school,located_in,outskirts of lahore,semeval
+a squad of heavily armed militants,sprayed,police training school with gunfire,semeval
+a squad of heavily armed militants,used,grenades,semeval
+telescope,comprises,lenses,semeval
+telescope,uses,lenses,semeval
+telescope,uses,tubes,semeval
+pulp,was placed in,tupperware tub,semeval
+tupperware tub,contains,water,semeval
+water,occurs_in,tupperware tub,semeval
+carpeters,uses,wood,semeval
+carpeters,uses,other_materials,semeval
+buildings,built by,carpeters,semeval
+boats,built by,carpeters,semeval
+carpeters,located_in,buildings,semeval
+carpeters,located_in,boats,semeval
+carpeters,belongs_to,carpentry,semeval
+milk samples,was obtained from,one milking,semeval
+cow,had milk sample taken from,milking,semeval
+sample,belongs_to,cow,semeval
+milking,occurs_in,farm,semeval
+farm,located_in,countryside,semeval
+entity a,is located in,place b,semeval
+place b,located in,country c,semeval
+entity a,founded in,year 1995,semeval
+blog,includes,blogger as participant in ongoing conversation,semeval
+book,offers,intimacy and accountability,semeval
+conversation,occurs_in,blog format,semeval
+reader,located_in,blurred line with original poster,semeval
+comment,replaces,old-fashioned editing,semeval
+peer review,supports,collective comment process,semeval
+speech,criticised,idea of religious education,semeval
+idea of religious education,includes,journey around the various religions,semeval
+bread,was considered good by,25%,semeval
+bread,was regular by,33%,semeval
+bread,was very bad by,17%,semeval
+bread,was very good by,8%,semeval
+body,unleashes,extraterrestrial passenger,semeval
+extraterrestrial passenger,infects,student population,semeval
+student population,occurs_in,breakneck pace,semeval
+asteroid,threatened,earth,semeval
+earth,occurs_in,universe,semeval
+asteroid,causes,disaster,semeval
+farm,has,forty acres,semeval
+farm,belongs_to,early years,semeval
+farm,includes,productive subsistence farm,semeval
+subsistence farm,has,sheep as primary source of income,semeval
+laptop,is inside,protective plastic bag,semeval
+protection plastic bag,made of,ldpe number 4,semeval
+ldpe number 4,can be recycled,easily,semeval
+gary wheelan,has,gender female,semeval
+gary wheelan,works_as,attorney,semeval
+dallas,is_located_in,texas,semeval
+gary wheelan,uses,verbal assaults,semeval
+telephone operator,occurs_in,workplace,semeval
+entity he,uses,tool to weave,semeval
+tale,about,subject concerning romantic concerns,semeval
+subject concerning romantic concerns,includes,happiness,semeval
+subject concerning romantic concerns,includes,love,semeval
+subject concerning romantic concerns,includes,sufferance,semeval
+the company,uses,church,semeval
+church,located_in,various_locales,semeval
+the company,has_remodeled,church,semeval
+church,becomes,home,semeval
+the company,located_in,various_locales,semeval
+hidden camera,was hidden in,business card-sized leaflet box,semeval
+business card-sized leaflet box,belongs_to,entity a,semeval
+entity a,found by,security guard,semeval
+unmanned atm,located_in,tokyo's minato ward,semeval
+tokyo's minato ward,located_in,japan,semeval
+hidden camera,occurs_in,early september,semeval
+the swim bladder of aquatic animals,gives them,ability to manipulate gravity,semeval
+on the morning of,occurs_in,16th,semeval
+we,accompanied by,coffle of fourteen asses,semeval
+coffle of fourteen asses,includes,salt,semeval
+salt,loaded with,coffle of fourteen asses,semeval
+coffle of fourteen asses,bound for,sansanding,semeval
+sansanding,located_in,place c,semeval
+entity a,uses,coffle of fourteen asses,semeval
+coffle of fourteen asses,belongs_to,entity b,semeval
+entity b,belongs_to,entity c,semeval
+the coloring,is derived from,the grand duke's coat of arms,semeval
+entity,uses,multi-purpose electrician pliers tool,semeval
+multi-purpose electrician pliers tool,occurs_in,working with gauge wire,semeval
+gauge wire,is_worked_with_by,electrician,semeval
+gps network adjustment,uses,ski tm software,semeval
+ski tm software,occurs_in,gps network adjustment process,semeval
+epoch data,is_used_by,ski tm software,semeval
+ski tm software,belongs_to,gps network adjustment team,semeval
+epoch data,is_adjusted_by,ski tm software,semeval
+ski tm software,has_constraints,network adjustment,semeval
+city,located_in,place unknown,semeval
+rock_and_roll,used_by,city,semeval
+city,belongs_to,country unknown,semeval
+city,founded_with,rock_and_roll,semeval
+parents,went away from,police station,semeval
+parents,is_poor,true,semeval
+parents,belongs_to,family,semeval
+william h. parker,belongs_to,los angeles police department,semeval
+los angeles police department,located_in,los angeles,semeval
+william h. parker,has_position,police chief,semeval
+los angeles police department,has_longest_serving_police_chief,william h. parker,semeval
+hospitals today,uses,blowby apparatus,semeval
+blowby apparatus,is used for,this purpose,semeval
+the boots,was in,a box,semeval
+a box,contains,stuff,semeval
+stuff,picked up by,boys,semeval
+boys,were at,post office,semeval
+post office,is located in,just before the curtain fell,semeval
+guy,convinced,someone,semeval
+someone,has,car,semeval
+car,occurs_in,somewhere,semeval
+someone,goes_to,somewhere,semeval
+someone,procures_for,others,semeval
+others,have,beer,semeval
+woman named bianca,is,designer of,semeval
+his literary debut,occured in,1919,semeval
+"esenin's small circle of ""literary hooligans""",includes,entity he,semeval
+imagineists,belongs_to,"esenin's small circle of ""literary hooligans""",semeval
+entity he,joined,"esenin's small circle of ""literary hooligans""",semeval
+his literary debut,occurs_in,"esenin's small circle of ""literary hooligans""",semeval
+1919,occurs_in,his literary debut,semeval
+entity he,uses,imagineists,semeval
+my rabbit,had,new litter,semeval
+rabbits,belongs_to,my rabbit,semeval
+rabbits,has,baby rabbits,semeval
+my rabbit,uses,food,semeval
+my rabbit,requires,water,semeval
+several texts,relate to,mythological anecdotes,semeval
+mythological anecdotes,associated with,his birth and exploits,semeval
+his birth and exploits,explain,distinct iconography,semeval
+iconography,belongs_to,entity a,semeval
+these new documents,point out,a number of troubling strategies,semeval
+enron,uses,these new documents,semeval
+enron,utilizes,troubling strategies,semeval
+punchcutter,makes,imprint,semeval
+imprint,occurs_on,piece of paper,semeval
+piece of paper,made_of,material not specified,semeval
+punchcutter,uses,soot,semeval
+open flame,produces,soot,semeval
+plug of the battery box,connects to,plug of the charger,semeval
+entity,has,strategy,semeval
+strategy,includes,engage,semeval
+global community,benefits,economy,semeval
+economy,occurs_in,kingdom_of_saudi_arabia,semeval
+national security,promoted_by,strategy,semeval
+welfare,promoted_by,strategy,semeval
+ofws_community,is_part_of,entity,semeval
+entity,located_in,kingdom_of_saudi_arabia,semeval
+kingdom_of_saudi_arabia,includes,ofws_community,semeval
+presentation,uses,animation,semeval
+animation,causes,sickness,semeval
+germs_and_microbes,causes,sickness,semeval
+presentation,outlines,preventive_measures,semeval
+preventive_measures,includes,simple_instructions,semeval
+the possible implications,was indicated in,the first publication,semeval
+document,is about,illegal drugs,semeval
+illegal drugs,causes,harm,semeval
+object-oriented-software-construction,was used by,bertrand mayer,semeval
+bertrand mayer,wrote,object-oriented-software-construction,semeval
+object-oriented-software-construction,is derived from,model,semeval
+researchers,has,basic ingredients,semeval
+basic ingredients,is synthesized by,researchers,semeval
+mug,contains,ale,semeval
+ale,poured into,mug,semeval
+mug,has,foam,semeval
+mug,includes,translucent liquid,semeval
+translucent liquid,becomes,clarified liquid,semeval
+clarified liquid,appears as,suds-topped amber,semeval
+vacuum motor,belongs_to,central vacuum,semeval
+canister,contains,vacuum motor,semeval
+filtration system,belongs_to,central vacuum,semeval
+canister,has,filtration system,semeval
+canister,located_in,place b,semeval
+place b,located_in,country c,semeval
+canister,founded_in,year 1995,semeval
+congress,approves,formation of the corps of medical cadets,semeval
+congress,located_in,united_states,semeval
+it,used mainly on,scarff ring mounts,semeval
+scarff ring mounts,belongs_to,entity not specified,semeval
+it,also fitted onto,top wing of fighter aircrafts,semeval
+fighter aircrafts,uses,bowden cable,semeval
+bowden cable,controlled by,entity not specified,semeval
+today,occurs_in,sentence,semeval
+camp,is,third best keeper,semeval
+team,includes,camp,semeval
+high-wheelers,was descended from,early type of push-bike,semeval
+early type of push-bike,occurs_in,time period without pedals,semeval
+geometry,includes,term line,semeval
+line,belongs_to,field_geometry,semeval
+car pollution,causes,serious health problems,semeval
+serious health problems,occurs_in,americans,semeval
+viewers,ignore,negative posts,semeval
+negative posts,occurs_in,site,semeval
+site,located_in,entity not specified,semeval
+offending writer,leaves,site,semeval
+site,belongs_to,organization not specified,semeval
+viewers,uses,feature not specified,semeval
+site,supports,behavior of ignoring negative posts,semeval
+molten core,has,been dropped into,semeval
+river,occurs_in,location not specified,semeval
+steam,occurs_in,occurrence of event,semeval
+mountain ranges,located in,north-western,semeval
+north-western,located in,unspecified_country,semeval
+unspecified_country,belongs_to,world,semeval
+core of the analyzer,uses,constraint propagation method,semeval
+entity a,has,entity b,semeval
+entity b,uses,technique c,semeval
+entity a,occurs_in,context d,semeval
+entity b,belongs_to,category e,semeval
+entity a,is,type f,semeval
+entity g,uses,entity a,semeval
+entity h,causes,event i,semeval
+entity j,located_in,location k,semeval
+entity l,has_value,value m,semeval
+nurse,grabs,patient,semeval
+patient,is located in,room with bed,semeval
+patient,escorted by,nurse,semeval
+nurse,uses,arm of patient,semeval
+patient,located in,hospital room,semeval
+nurse,belongs_to,healthcare facility,semeval
+person who created the content,belongs_to,entity a,semeval
+entity a,uses,person who took something because it's there,semeval
+person who took something because it's there,is unfair to,person who created the content,semeval
+person who created the content,has rights over,person who took something because it's there,semeval
+mushroom,is located in,mass of wet twigs and leaves,semeval
+one win,causes,we've suddenly got a squad,semeval
+squad,consists of,world beaters,semeval
+potatoes,placed in,steaming basket,semeval
+steaming basket,fitting inside,large pot,semeval
+large pot,located in,unspecified location,semeval
+basket,made of,unspecified material,semeval
+potatoes,belongs_to,unspecified vegetable family,semeval
+bill baker,said,we weren't sure how high we could go,semeval
+this thesis,was asserted in,a book,semeval
+book,was written by,the police chief,semeval
+the police chief,belongs_to,ocrb,semeval
+ocrb,located_in,place b,semeval
+a_entity,has,crew,semeval
+crew,is behind,counter,semeval
+counter,located_in,store,semeval
+entity_a,uses,ingredients,semeval
+ingredients,includes,two_pieces_of_fried_chicken_breast,semeval
+fried_chicken_breast,is_located_in,batter,semeval
+rain,caused,cancellation of the event,semeval
+event,occurred_in,1877,semeval
+1877,occurred_in,1878,semeval
+new law,enforced_in,1878,semeval
+professional education,is concerned with,future directions of the profession,semeval
+tech_and_society_magazine,has published,number of articles,semeval
+tech_and_society_magazine,about,implications for society,semeval
+various_trends_and_issues,in,engineering,semeval
+various_trends_and_issues,in,computer_science,semeval
+various_trends_and_issues,in,education,semeval
+the website,has,articles,semeval
+the website,has,statistics,semeval
+the website,has,projections,semeval
+individuals,uses,the website,semeval
+teams,uses,the website,semeval
+the ancient astronaut theory,has been addressed,frequently,semeval
+science fiction,includes,the ancient astronaut theory,semeval
+horror fiction,includes,the ancient astronaut theory,semeval
+clustering,resulted in,22445 clusters,semeval
+22445 clusters,composed from,two to thousands of reads,semeval
+i,has,subject jacks_keller_s_recipes_for_cherry_wine,semeval
+jacks_keller_s_recipes_for_cherry_wine,is_written_by,person jack_keller,semeval
+person jack_keller,located_in,place unknown,semeval
+entity a,got_started_on,project unknown,semeval
+project unknown,uses,i,semeval
+i,has,predicate read,semeval
+person who_read_i,read,jacks_keller_s_recipes_for_cherry_wine,semeval
+song,has,entry,semeval
+contest,occurs_in,world,semeval
+song,uses,music,semeval
+contest,located_in,location_not_specified,semeval
+song,is_entered_into,contest,semeval
+floppies,has,format dos fat12,semeval
+floppies,produced by,factory,semeval
+factory,located_in,recent years,semeval
+floppies,shipped_with,pre-formatting,semeval
+floppies,uses,operating system dos,semeval

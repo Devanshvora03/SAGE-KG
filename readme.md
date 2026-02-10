@@ -65,23 +65,29 @@ The repository is designed for **reproducible research** on multi-hop reasoning,
 
 SAGE-KG/
 ├── Triplet Extraction - SAGE/
-│   └── agents.py
+│ └── agents.py
 ├── Graph Construction/
-│   └── create_kg.py
+│ └── create_kg.py
 ├── Graph Querying - KGI/
-│   └── query_kg.py
+│ └── query_kg.py
 ├── Evaluation/
-│   ├── Intrinsic/
-│   └── Extrinsic/
+│ ├── Intrinsic/
+│ ├── Extrinsic/
+│ ├── Human Extrinsic /
+│ │ └── data.csv
+│ └── Human Intrinsic - Semveval/
+│ ├── SAGE/
+│ ├── KGGen/
+│ ├── OpenIE/
+│ └── Zeroshot/
 ├── Baselines/
-│   ├── Hipporag/
-│   ├── StandardRAG/
-│   ├── KGGen/
-│   └── GraphRAG/
+│ ├── Hipporag/
+│ ├── StandardRAG/
+│ ├── KGGen/
+│ └── GraphRAG/
 ├── Datasets/
-├── Results/
+├── Results/ 
 └── Ablation/
-
 ```
 
 ---
@@ -154,6 +160,18 @@ Outputs stored in:
 
 Results/Extrinsic Eval GPT/
 Results/Extrinsic Eval Gemini/
+
+```
+
+---
+
+## 👥 Human Evaluation
+
+SAGE-KG includes **human-annotated evaluations** to complement LLM-based metrics and provide grounded validation.  
+Human **extrinsic evaluation** (`Evaluation/Human - Extrinsic Evaluation/data.csv`) contains manual judgments of final QA answers for correctness and completeness.  
+Human **intrinsic evaluation** (`Evaluation/Human - Intrinsic Evaluation - Semveval/`) measures extraction fidelity against SemEval-style annotations.  
+This setup enables direct comparison between **SAGE, KGGen, OpenIE, and Zero-shot** triplet extractors.  
+Human evaluations isolate **true extraction quality and reasoning utility**, independent of automated judges.
 
 ```
 
