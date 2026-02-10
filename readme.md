@@ -1,4 +1,4 @@
-# 🧠 SAGE-KG  - Sequential Agentic Orchestration for Scalable Knowledge Graph Construction and Reasoning
+# SAGE-KG  - Sequential Agentic Orchestration for Scalable Knowledge Graph Construction and Reasoning
 
 SAGE-KG is a **research toolkit and evaluation suite** for **Graph Retrieval-Augmented Generation (Graph RAG)**.  
 It provides an end-to-end pipeline for **triplet extraction, knowledge graph construction, hybrid graph + vector retrieval**, and **comprehensive intrinsic & extrinsic evaluation**, along with **strong baseline implementations**.
@@ -103,7 +103,7 @@ SAGE-KG/
 - Supports multiple extraction variants (agentic, non-agentic, simple)
 
 ### 2. Knowledge Graph Construction
-- Aggregates extracted triplets into a **global MultiDiGraph**
+- Aggregates extracted triplets into a **global MultiGraph**
 - Adds:
   - Entity embeddings
   - TF-IDF indices
@@ -122,49 +122,6 @@ SAGE-KG/
 
 ## 📊 Evaluation Framework
 
-### Intrinsic Evaluation
-**Goal:** Measure whether retrieved graph context is sufficient to answer a question.
-
-- Binary judgment: **Yes / No**
-- Judge model: `GPT-4o-mini`
-- Evaluates:
-  - Context sufficiency
-  - Factual coverage
-  - Retrieval completeness
-
-Scripts and prompts are fully contained in:
-```
-
-SAGE-KG/Evaluation/Intrinsic/
-
-```
-
----
-
-### Extrinsic Evaluation
-**Goal:** Measure end-to-end answer quality when using KG-RAG.
-
-- LLM judges score answers on a **0–10 scale** across:
-  - **Completeness**
-  - **Accuracy**
-  - **Knowledgeability**
-  - **Relevance**
-  - **Logical Coherence**
-
-- Judges:
-  - OpenAI GPT-4
-  - Google Gemini
-
-Outputs stored in:
-```
-
-Results/Extrinsic Eval GPT/
-Results/Extrinsic Eval Gemini/
-
-```
-
----
-
 ## 👥 Human Evaluation
 
 SAGE-KG includes **human-annotated evaluations** to complement LLM-based metrics and provide grounded validation.  
@@ -172,17 +129,6 @@ Human **extrinsic evaluation** (`Evaluation/Human - Extrinsic Evaluation/data.cs
 Human **intrinsic evaluation** (`Evaluation/Human - Intrinsic Evaluation - Semveval/`) measures extraction fidelity against SemEval-style annotations.  
 This setup enables direct comparison between **SAGE, KGGen, OpenIE, and Zero-shot** triplet extractors.  
 Human evaluations isolate **true extraction quality and reasoning utility**, independent of automated judges.
-
-```
-
----
-
-### Additional Metrics
-- **Semantic Similarity**  
-  Embedding cosine similarity between predicted and gold answers
-
-- **Retrieval Similarity (R-S)**  
-  Measures alignment between retrieved triplets and the query’s factual intent
 
 ---
 
