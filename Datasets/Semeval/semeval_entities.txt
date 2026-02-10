@@ -1,0 +1,102 @@
+id,sentence,entity1,entity2
+0,The swim bladder of aquatic animals gives them the ability to manioulate gravity and should be researched more,swim bladder,animals
+1,The bee carries pollen in a pollen basket back to the hive,pollen,basket
+2,The air was filled with the smell of burning plastic,air,smell
+3,The hidden camera, found by a security guard, was hidden in a business card-sized leaflet box placed at an unmanned ATM in Tokyo's Minato Ward in early September,camera,leaflet box
+4,The laptop was inside a protective plastic bag made from LDPE number 4, which can be easily recycled,laptop,plastic bag
+5,The coloring is derived from the Grand Duke's coat of arms,coloring,coat of arms
+6,The possible implications were indicated in the first publication,implications,publication
+7,The mushroom was found in a mass of wet twigs and leaves,mushroom,mass
+8,The bread prepared with rice flour was considered good by 25% of the assessors, regular by 33%, very bad by 17% and very good by only 8%,rice,flour
+9,The monitoring station receives the signal through a communication device and the combined signal is processed to retrieve GPS data,station,device
+10,The receiver was outputting the same tone to my Deva 5,receiver,tone
+11,The document is about illegal drugs, which, it claims, are illegal because they are harmful,document,drugs
+12,The size of a tree crown is strongly correlated with the growth of the tree,tree,crown
+13,The major theme of the book is the beauty of a dream,book,beauty
+14,The ancient astronaut theory has been addressed frequently in science fiction and horror fiction,theory,science fiction
+15,The core of the analyzer first identifies the infeasible paths using the constraint propagation method,analyzer,method
+16,The presentation uses animation to show how germs and microbes cause sickness, and outlines simple preventive measures,microbes,sickness
+17,The mummified cat was found in a live trap with an empty dish,cat,trap
+18,The body unleashes its extraterrestrial passenger, which proceeds to infect the student population at a breakneck pace,body,passenger
+19,The castle was inside a museum,castle,museum
+20,The design is by my wife, Bianca,design,wife
+21,The ale poured slowly into a mug, at first all foam, then turning translucent before suddenly clarifying into a brilliant suds-topped amber,ale,mug
+22,The diseases are caused by gene mutations on the X chromosome,diseases,gene mutations
+23,The State Capital is a disgusting sewer and Bruno is just one in the mischief of filthy rats that proliferate there,mischief,rats
+24,The website publishes analytical articles as well as advanced statistics and projections for individuals and teams,website,articles
+25,The main origin of the metamorphic lithics is from the mountain ranges located in the north-western,lithics,mountain ranges
+26,The boots were in a box of stuff the boys picked up at the post office just before the curtain fell,boots,box
+27,The foundry's major product lines include manhole frames and utility covers, airport castings, drainage products, Trench Grates, hydrant and valve components, and industrial castings,foundry,frames
+28,The stories are narrated through dance,stories,dance
+29,The man was carried into a waiting police car from Coleraine Times,man,car
+30,This volume analyzes central concepts of the contemporary political debate,volume,concepts
+31,The parents went away from the police station, since they were poor,parents,station
+32,The telescope comprises lenses and tubes: both are extremely important to the performance of the telescope,telescope,lenses
+33,The high-wheelers were descended from an early type of push-bike, without pedals,high-wheelers,push-bike
+34,The clustering resulted in 22445 clusters, which were composed from two to thousands of reads,clustering,clusters
+35,The defendant was released from custody on March 2, 2001,defendant,custody
+36,We poured the pulp into the tupperware tub filled with water,pulp,tupperware tub
+37,The GPS network adjustment of data from both epochs is accomplished using the Ski TM software with constrains network adjustment,data,epochs
+38,This thesis was asserted in a book, written by the police chief of OCRB,thesis,book
+39,We used fried cheese as an element in a dish,cheese,dish
+40,The model is derived from an example used by Bertrand Meyer in his book, Object-Oriented Software Construction,model,example
+41,This song has been entered into the contest unofficially,song,contest
+42,The plant builds four-cylinder "Ecotec" that are used in vehicles like the Chevy Malibu and Cobalt,plant,vehicles
+43,It spilled more than 53000 gallons of crude oil into the surrounding marshes one of the bigger spills caused by the hurricane,spills,hurricane
+44,More and more English Premier League clubs are falling into foreign ownership,clubs,ownership
+45,These attributes are inherited to their children,attributes,children
+46,The presentation uses animation to show how germs and microbes cause sickness, and outlines simple preventive measures,microbes,sickness
+47,His speech criticised the idea of religious education as a journey around the various religions,speech,idea
+48,The body unleashes its extraterrestrial passenger, which proceeds to infect the student population at a breakneck pace,body,passenger
+49,Asteroid threatened Earth with disaster,Asteroid,disaster
+50,In its early years the farm had forty acres, and was a productive subsistence farm with sheep being the primary source of income,farm,acres
+51,After handsome renovations at various locales, the company has remodeled a church into a home,company,home
+52,On the morning of the 16th we again set forward, accompanied by a coffle of fourteen asses, loaded with salt, bound for Sansanding,coffle,asses
+53,A multi-purpose electrician pliers tool is crucial for severing any gauge wire with which the electrician is working,electrician,tool
+54,We built this city on rock and roll,city,rock and roll
+55,William H. Parker was the longest serving police chief in Los Angeles Police Department,police,chief
+56,Hospitals today use a "blowby" apparatus for this purpose,Hospitals,apparatus
+57,Roadside attractions are frequently advertised with billboards to attract tourists,attractions,billboards
+58,Anyway, the guy convinced some local with a car to drive somewhere to procure us some beer,guy,car
+59,His literary debut occured in 1919, when he joined Esenin's small circle of "literary hooligans," the Imaginists,circle,hooligans
+60,My rabbit just had a new litter of rabbits,litter,rabbits
+61,Several texts relate mythological anecdotes associated with his birth and exploits and explain his distinct iconography,texts,anecdotes
+62,These new documents point out a number of troubling strategies utilized by Enron,documents,strategies
+63,To test the punch, the punchcutter makes an imprint on a piece of paper after coating the punch with soot from an open flame,punchcutter,imprint
+64,They connected the plug of the battery box to the plug of the charger,plug,battery box
+65,Our visit is part of the general strategy to engage the global community to benefit our economy, to enhance our national security and of course, to promote the welfare of our OFWs -- the biggest community of which is right here in the Kingdom of Saudi Arabia,visit,strategy
+66,The possible implications were indicated in the first publication,implications,publication
+67,A bazooka is going to far away from the orginal Mafia game,bazooka,game
+68,Researchers synthesized the basic ingredients,Researchers,ingredients
+69,A central vacuum is a vacuum motor and filtration system built inside a canister,motor,canister
+70,Formation of the corps of medical cadets was approved by Congress on August 3, 1861,corps,cadets
+71,It was used mainly on Scarff ring mounts, but was also fitted onto the top wing of fighter aircrafts, controlled by a Bowden cable,wing,aircrafts
+72,Analysts assess distribution and changes in distribution over time by using frequency,Analysts,frequency
+73,Today it was proved Camp is the third best keeper in the team,keeper,team
+74,A line is one of the basic terms in geometry,line,geometry
+75,As a result, pollution from cars is causing serious health problems for Americans,pollution,cars
+76,When viewers ignore negative posts, the offending writer often leaves the site,posts,writer
+77,Molten core have been dropped into the river to investigate the conditions of the occurrence of a steam,Molten core,river
+78,He has combined intelligent history with moving prose, creating an informative, inspiring narrative telling the history of a great people,narrative,history
+79,A nurse grabs the patient by the arm and escorts her back to her bed,nurse,arm
+80,Simply taking something because it's there is unfair to the person who created the content, and whose rights come first,person,content
+81,One win and we've suddenly got a squad of world beaters,squad,beaters
+82,Meanwhile, we placed the potatoes in a steaming basket that was fitting inside a large pot,potatoes,basket
+83,'We weren't sure how high we could go', said Bill Baker of Skidmore, Owings & Merrill, the building's structural engineer,building,engineer
+84,A busy crew behind the counter assembles the sandwiches with two pieces of fried chicken breast, which are beautifully battered,crew,breast
+85,Rain caused cancellation of the event in 1877, so enforcement of the new law had to wait until 1878,Rain,cancellation
+86,Professional education is inevitably concerned with the future directions of the profession, and Technology and Society Magazine has published a number of articles about the implications for society of various trends and issues in engineering, computer science, and education,society,trends
+87,Eighteen studies were focused on older adults living at home,studies,adults
+88,David Mamet took questions from the audience and shared his views on topics such as television, the democracy of culture and the English accent,views,television
+89,Additionally, the chapter points out the importance of new employee orientation and lists some of the important things to cover during that process,chapter,importance
+90,In this approach, correction and police personnel jointly sought to locate and apprehend offenders who had absconded from parole and probation officers,offenders,officers
+91,Bunn has recalled 35,600 single-cup pod brewers because the drawer of the coffeemaker opens unexpectedly during a brew cycle, posing a burn hazard to consumers,drawer,coffeemaker
+92,A probe tube is introduced into a reaction container for measuring the operating condition of a medium in the interior of the container,tube,container
+93,Carpenters build many things from wood and other materials, like buildings and boats,Carpenters,wood
+94,Milk samples were obtained from one milking of each cow,samples,milking
+95,There's a comparison between the intimacy and accountability offered by a novel and that offered by a blog in which the blogger is participant in an on going conversation, in which the line between reader and original poster is blurred beyond recognition, in which collective comment replaces old-fashioned ivory tower editing with a kind of universal peer review,blogger,conversation
+96,Gary Wheelan, a womanizing, adulterous thirty-something Dallas attorney, finally gets what he deserves when his verbal assaults provoke a telephone operator,telephone,operator
+97,He weaves complex tales concerning the romantic concerns of happiness, love and sufferance,tales,concerns
+98,Lisa took great joy from laughing, volunteering at school, taking pictures, chatting, the Twins and Vikings, playing softball and volleyball, and time at Lake Vermilion,joy,laughing
+99,Such lines from the pen of a young author widely read by the younger part of the population only confirm the profound change in the mood of the Freuch proletariat,lines,author
+100,In recent years, most floppies have shipped pre-formatted from the factory as DOS FAT12 floppies,floppies,factory

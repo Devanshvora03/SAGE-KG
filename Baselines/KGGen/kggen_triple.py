@@ -1,15 +1,3 @@
-"""
-Triple Processor
-----------------
-Extracts (subject, predicate, object) triples from text documents using the KGGen API.
-
-Usage:
-    python triple_processor.py --api_key <OPENAI_API_KEY> --data_dir data --output_dir outputs
-
-Environment Variables (optional):
-    OPENAI_API_KEY     If not provided via CLI, read from environment
-"""
-
 import os
 import re
 import sys

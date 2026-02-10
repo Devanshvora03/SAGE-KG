@@ -275,11 +275,9 @@ class TripleProcessor:
                     - Make bridge triplets connected with consistent logical entities, not long triplets.
                     - Ensure connections across facts through shared entities with consistent names.
                     - The planning should be done in such a way that it is able to summarize or reason for events/facts in it.
-                3. Entity names must hold the descriptive details (phases, categories, types, levels, rounds, etc).
-                4. Ensure consitent entity names in different triplets for better graph connection
-                5. Predicates must stay **simple, generic verbs** (e.g., supports, awards, includes, requires, uses).
-                6. Ensure no contextual information (numbers, dates, monetary values) is lost in the plan.
-                7. Just give the plan, no triplets needed.
+                3. Ensure consitent entity names in different triplets for better graph connection
+                4. Predicates must stay **simple, generic verbs** (e.g., supports, awards, includes, requires, uses).
+                5. Just give the plan, no triplets needed.
                 
                 Output planning analysis only - no triplets yet.
                 """,
