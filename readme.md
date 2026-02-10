@@ -1,5 +1,4 @@
-# 🧠 SAGE-KG  
-**Sequential Agentic Knowledge Graphs for Retrieval-Augmented Generation**
+# 🧠 SAGE-KG  - Sequential Agentic Orchestration for Scalable Knowledge Graph Construction and Reasoning
 
 SAGE-KG is a **research toolkit and evaluation suite** for **Graph Retrieval-Augmented Generation (Graph RAG)**.  
 It provides an end-to-end pipeline for **triplet extraction, knowledge graph construction, hybrid graph + vector retrieval**, and **comprehensive intrinsic & extrinsic evaluation**, along with **strong baseline implementations**.
