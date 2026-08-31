@@ -4,6 +4,57 @@ Sequential Uncertainty Resolution for knowledge-graph construction with small la
 
 SAGE-KG turns a text corpus into a knowledge graph in three stages, then answers multi-hop questions from that graph. The method is **Sequential Uncertainty Resolution (SUR)**: semantic, structural, and representational uncertainty are resolved one after another, not in a single prompt.
 
+## Install
+
+Python 3.10+ and a running [Ollama](https://ollama.com) daemon.
+
+```bash
+pip install git+https://github.com/Devanshvora03/SAGE-KG.git
+# from a local clone
+pip install -e .
+# LLM-as-judge extras
+pip install -e ".[eval]"
+
+ollama pull qwen2.5:14b
+```
+
+## Use as a library
+
+```python
+from sage_kg import SAGEKG
+
+kg = SAGEKG(model="qwen2.5:14b", output_dir="output")
+kg.extract("./docs")          # folder of .md / .txt files
+kg.build()
+print(kg.ask("Who directed Inception?"))
+```
+
+Or extract from a string:
+
+```python
+kg.extract_text("Christopher Nolan directed Inception in 2010.")
+kg.build()
+print(kg.retrieve("Who directed Inception?"))
+```
+
+Load a graph you already built:
+
+```python
+kg = SAGEKG(model="qwen2.5:14b").load(
+    "output/knowledge_graph.pickle",
+    "output/chunk_data.pickle",
+    "output/tfidf_data.joblib",
+)
+```
+
+## CLI
+
+```bash
+sage-kg extract qwen2.5:14b --data ./docs --output ./output
+sage-kg construct --input-triplets output/triples_*.json --graph-file output/knowledge_graph.pickle
+sage-kg query --qa-file questions.md --graph-file output/knowledge_graph.pickle --llm-model qwen2.5:14b
+```
+
 ```
 documents  →  triples  →  graph + indexes  →  retrieved triples  →  answer
                SUR           NetworkX            hybrid KGI           LLM
@@ -47,19 +98,14 @@ Ablation/                     # stage-order and model-family ablations
 
 ---
 
-## Setup
-
-**Python 3.10+** and a running [Ollama](https://ollama.com) daemon.
+## Setup (research clone)
 
 ```bash
 git clone https://github.com/Devanshvora03/SAGE-KG.git
 cd SAGE-KG
 python -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
-
-# models used in the paper (pull what you need)
-ollama pull qwen2.5:14b
+pip install -e ".[eval]"
 ```
 
 For LLM-as-judge evaluation, copy `.env.example` to `.env` and set `OPENAI_API_KEY` and/or a Gemini key.
@@ -153,6 +199,18 @@ Released numbers for all methods and judges live under `Results/`.
 | SemEval-2010 Task 8 | Human entity-recovery check |
 
 Dataset folders contain the manifests used for the reported runs.
+
+---
+
+## Publish to PyPI
+
+```bash
+pip install build twine
+python -m build
+twine upload dist/*
+```
+
+The distribution includes only the `sage_kg` package (not `Results/`, `Baselines/`, or ablation dumps).
 
 ---
 

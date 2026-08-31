@@ -9,3 +9,7 @@ logs/
 *.joblib
 .idea/
 .vscode/
+build/
+dist/
+*.egg-info/
+.eggs/

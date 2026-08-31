@@ -25,9 +25,9 @@ Output: knowledge_graph.pickle, chunk_data.pickle, tfidf_data.joblib
 import argparse
 import json
 import re
-import numpy as np
 import pickle
 from collections import defaultdict
+from pathlib import Path
 from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -245,6 +245,43 @@ def create_chunks_from_triplets(triplets_data, chunk_size=3):
     return chunks
 
 
+def build_knowledge_graph(
+    input_triplets,
+    graph_file="knowledge_graph.pickle",
+    chunk_file="chunk_data.pickle",
+    tfidf_file="tfidf_data.joblib",
+    embedding_model="all-mpnet-base-v2",
+):
+    """Build G and write the three index files. ``input_triplets`` is a path or a list of dicts."""
+    if isinstance(input_triplets, (str, Path)):
+        with open(input_triplets, "r", encoding="utf-8") as f:
+            triplets_data = json.load(f)
+    else:
+        triplets_data = input_triplets
+
+    if hasattr(embedding_model, "encode"):
+        encoder = embedding_model
+    else:
+        encoder = SentenceTransformer(embedding_model)
+
+    chunk_data = create_chunks_from_triplets(triplets_data)
+
+    (unique_entities, all_relationships, entity_to_chunks,
+     chunk_triplet_mapping, all_triplets) = preprocess_chunk_data(chunk_data)
+
+    entity_embeddings = generate_entity_embeddings(unique_entities, encoder)
+    chunk_embeddings = generate_chunk_embeddings(chunk_triplet_mapping, encoder)
+    G = create_networkx_graph(unique_entities, all_relationships, entity_to_chunks, entity_embeddings)
+    vectorizer, tfidf_matrix, entity_list = create_tfidf_index(
+        unique_entities, entity_to_chunks, chunk_triplet_mapping
+    )
+    save_graph_data(
+        G, chunk_triplet_mapping, chunk_embeddings, vectorizer, tfidf_matrix, entity_list,
+        graph_file, chunk_file, tfidf_file,
+    )
+    return G
+
+
 def main():
     parser = argparse.ArgumentParser(description="SAGE-KG: build NetworkX graph + retrieval indexes from triples")
     parser.add_argument("--input-triplets", default="triplets.json", help="Input triplets JSON file")
@@ -254,31 +291,16 @@ def main():
     parser.add_argument("--embedding-model", default="all-mpnet-base-v2", help="Sentence-Transformers model")
     args = parser.parse_args()
 
-    embedding_model = SentenceTransformer(args.embedding_model)
-
     try:
-        with open(args.input_triplets, "r", encoding="utf-8") as f:
-            triplets_data = json.load(f)
-
-        chunk_data = create_chunks_from_triplets(triplets_data)
-
-        (unique_entities, all_relationships, entity_to_chunks,
-         chunk_triplet_mapping, all_triplets) = preprocess_chunk_data(chunk_data)
-
-        entity_embeddings = generate_entity_embeddings(unique_entities, embedding_model)
-
-        chunk_embeddings = generate_chunk_embeddings(chunk_triplet_mapping, embedding_model)
-
-        G = create_networkx_graph(unique_entities, all_relationships, entity_to_chunks, entity_embeddings)
-
-        vectorizer, tfidf_matrix, entity_list = create_tfidf_index(unique_entities, entity_to_chunks, chunk_triplet_mapping)
-
-        save_graph_data(G, chunk_triplet_mapping, chunk_embeddings, vectorizer, tfidf_matrix, entity_list,
-                        args.graph_file, args.chunk_file, args.tfidf_file)
-
+        G = build_knowledge_graph(
+            args.input_triplets,
+            graph_file=args.graph_file,
+            chunk_file=args.chunk_file,
+            tfidf_file=args.tfidf_file,
+            embedding_model=args.embedding_model,
+        )
         print(f"Graph: {G.number_of_nodes()} nodes, {G.number_of_edges()} edges")
         print(f"Wrote {args.graph_file}, {args.chunk_file}, {args.tfidf_file}")
-
     except Exception as e:
         print(f"Script failed: {e}")
         raise
