@@ -177,6 +177,20 @@ class NetworkXRetriever:
         triplets = self._collect_multihop_triplets(seeds)
         return triplets
 
+    def load(self, graph_file, chunk_file, tfidf_file):
+        """Load the three files written by ``build_knowledge_graph``."""
+        self.load_graph_data(graph_file)
+        self.load_chunk_data(chunk_file)
+        self.load_tfidf_data(tfidf_file)
+        return self
+
+    def ask(self, query, embedding_model, llm):
+        """Retrieve triples for ``query`` and generate a short answer. Returns (answer, triples)."""
+        triplets = self.retrieve_triplets(query, embedding_model)
+        if not triplets:
+            return "No answer available", []
+        return answer_question(query, triplets, llm), triplets
+
 
 def answer_question(query, triplets, llm):
     """Short factual answer from retrieved triples only (no extra corpus text)."""

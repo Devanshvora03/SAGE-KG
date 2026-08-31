@@ -392,7 +392,7 @@ class TripleProcessor:
         chunks = self.load_documents(file_patterns)
         if not chunks:
             print("No chunks to process. Exiting.")
-            return
+            return [], None
 
         all_triplets: List[Triple] = []
 
@@ -404,8 +404,24 @@ class TripleProcessor:
         unique_triplets = self.deduplicate_triplets(all_triplets)
         self.total_unique = len(unique_triplets)
 
-        self._save_results(unique_triplets)
+        json_path = self._save_results(unique_triplets)
         self._print_summary()
+        return unique_triplets, json_path
+
+    def extract_text(self, text: str, file_id: str = "inline") -> List[Triple]:
+        """Run SUR on a single string. Useful as a library call without a data folder."""
+        chunks = self.split_text(text)
+        all_triplets: List[Triple] = []
+        for i, chunk_text in enumerate(chunks):
+            if len(chunk_text.strip()) < 20:
+                continue
+            triples = self.process_chunk({
+                "file_id": file_id,
+                "chunk_id": f"{file_id}_chunk_{i:03d}",
+                "text": chunk_text,
+            })
+            all_triplets.extend(triples)
+        return self.deduplicate_triplets(all_triplets)
 
     def _save_results(self, triplets: List[Triple]):
         """Write .txt (readable) and .json (input to create_kg.py)."""
@@ -436,6 +452,7 @@ class TripleProcessor:
         logger.info(f"Saved {len(triplets)} unique triples")
         logger.info(f"  → {txt_path.name}")
         logger.info(f"  → {json_path.name}")
+        return json_path
 
     def _print_summary(self):
         duration = time.time() - self.start_time

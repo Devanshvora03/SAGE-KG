@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sage-kg"
+version = "0.1.0"
+description = "Sequential Uncertainty Resolution for knowledge-graph construction with small language models."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Devansh Vora" }]
+keywords = [
+    "knowledge-graph",
+    "rag",
+    "llm",
+    "information-extraction",
+    "multi-hop",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "crewai",
+    "langchain-community",
+    "charset-normalizer",
+    "tqdm",
+    "sentence-transformers",
+    "scikit-learn",
+    "networkx",
+    "numpy",
+    "joblib",
+]
+
+[project.optional-dependencies]
+eval = ["openai", "python-dotenv", "datasets"]
+
+[project.urls]
+Homepage = "https://github.com/Devanshvora03/SAGE-KG"
+Repository = "https://github.com/Devanshvora03/SAGE-KG"
+Issues = "https://github.com/Devanshvora03/SAGE-KG/issues"
+
+[project.scripts]
+sage-kg = "sage_kg.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sage_kg*"]
+exclude = [
+    "sage_kg.evaluation.human_extrinsic*",
+    "sage_kg.evaluation.human_intrinsic_semeval*",
+]
