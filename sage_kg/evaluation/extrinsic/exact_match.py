@@ -1,3 +1,6 @@
+"""Exact Match (EM) on query_kg.py markdown: Ground Truth vs Retrieved Answer.
+"""
+
 import argparse
 import string
 import re

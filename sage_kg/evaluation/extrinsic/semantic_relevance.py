@@ -1,3 +1,6 @@
+"""Semantic Relevance (S-R): MiniLM cosine between ground-truth and predicted answers.
+"""
+
 import argparse
 from typing import List, Tuple
 import numpy as np

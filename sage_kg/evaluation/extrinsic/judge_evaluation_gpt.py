@@ -1,3 +1,8 @@
+"""Extrinsic LLM-as-judge (GPT): score QA answers against ground truth.
+
+Reads the markdown produced by sage_kg/querying/query_kg.py.
+"""
+
 import argparse
 import json
 import os

@@ -1,3 +1,8 @@
+"""Intrinsic LLM-as-judge (Gemini): same completeness/accuracy protocol as judge_gpt.py.
+
+Second independent judge in the paper.
+"""
+
 import argparse
 import json
 import re

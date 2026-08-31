@@ -1,0 +1,12 @@
+crewai
+langchain-community
+charset-normalizer
+tqdm
+sentence-transformers
+scikit-learn
+networkx
+numpy
+joblib
+openai
+python-dotenv
+datasets

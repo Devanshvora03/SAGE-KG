@@ -1,3 +1,8 @@
+"""Intrinsic LLM-as-judge (GPT): factual precision and coverage of extracted triples vs source chunks.
+
+Paper metrics: Factual Precision, Coverage, Average Quality. Requires OPENAI_API_KEY.
+"""
+
 import argparse
 import json
 import os

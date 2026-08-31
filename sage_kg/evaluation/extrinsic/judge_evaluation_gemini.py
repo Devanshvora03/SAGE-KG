@@ -1,3 +1,6 @@
+"""Extrinsic LLM-as-judge (Gemini): same QA rubric as judge_evaluation_gpt.py.
+"""
+
 import argparse
 import os
 import json

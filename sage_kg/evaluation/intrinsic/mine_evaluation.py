@@ -1,3 +1,6 @@
+"""MINE relational completeness: does the constructed graph contain each gold fact?
+"""
+
 import json
 import sys
 import os
