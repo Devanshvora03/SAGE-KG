@@ -37,7 +37,7 @@ from pathlib import Path
 from tqdm import tqdm
 from charset_normalizer import detect
 from crewai import Agent, Task, Crew, Process
-from langchain_community.chat_models import ChatOllama
+from sage_kg.llm import chat_llm
 import sys
 from argparse import ArgumentParser, Namespace
 
@@ -520,7 +520,7 @@ def main():
         setup_logging(model_name, log_dir)
 
         # Temperature 0: extraction should be deterministic, not creative.
-        llm = ChatOllama(model=model_name, temperature=0)
+        llm = chat_llm(model_name, temperature=0)
 
         processor = TripleProcessor(
             llm=llm,

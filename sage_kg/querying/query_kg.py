@@ -27,8 +27,9 @@ import joblib
 import networkx as nx
 from collections import defaultdict
 from sentence_transformers import SentenceTransformer
-from langchain_community.llms import Ollama
 from sklearn.metrics.pairwise import cosine_similarity
+
+from sage_kg.llm import OllamaCompleter
 
 
 def read_sample_file(file_path):
@@ -222,7 +223,7 @@ def main():
     args = parser.parse_args()
 
     embedding_model = SentenceTransformer(args.embedding_model)
-    llm = Ollama(model=args.llm_model, temperature=0)
+    llm = OllamaCompleter(args.llm_model, temperature=0)
 
     qa_pairs = read_sample_file(args.qa_file)
 

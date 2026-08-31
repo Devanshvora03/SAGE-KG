@@ -1,5 +1,4 @@
-crewai
-langchain-community
+crewai[litellm]>=1.0.0,<2
 charset-normalizer
 tqdm
 sentence-transformers
