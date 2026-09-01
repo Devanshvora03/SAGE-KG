@@ -28,11 +28,10 @@ import re
 import pickle
 from collections import defaultdict
 from pathlib import Path
-from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
-from sklearn.feature_extraction.text import TfidfVectorizer
-import joblib
 import networkx as nx
+
+from sage_kg.models import Graph
 
 
 def sanitize_relationship_name(rel_name):
@@ -146,14 +145,15 @@ def generate_chunk_embeddings(chunk_triplet_mapping, embedding_model, batch_size
     return chunk_embeddings
 
 
-def create_networkx_graph(entities, relationships, entity_to_chunks, entity_embeddings):
-    """Build the directed multigraph G. Multiple edges between the same pair are allowed."""
+def create_networkx_graph(entities, relationships, entity_to_chunks, entity_embeddings=None):
+    """Build the directed multigraph G. Embeddings are optional so generate() needs no Pillow/torch."""
     G = nx.MultiDiGraph()
+    entity_embeddings = entity_embeddings or {}
 
     for entity in tqdm(entities, desc="Adding entities"):
         G.add_node(entity,
                   node_type='entity',
-                  embedding=entity_embeddings[entity],
+                  embedding=entity_embeddings.get(entity),
                   chunk_ids=list(entity_to_chunks[entity]))
 
     for rel in tqdm(relationships, desc="Adding relationships"):
@@ -186,6 +186,8 @@ def create_tfidf_index(entities, entity_to_chunks, chunk_triplet_mapping):
     entity_list = list(entities)
     documents = [entity_documents[entity] for entity in entity_list]
 
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
     vectorizer = TfidfVectorizer(stop_words='english', max_features=10000, ngram_range=(1, 2))
     tfidf_matrix = vectorizer.fit_transform(documents)
 
@@ -202,6 +204,8 @@ def save_graph_data(G, chunk_triplet_mapping, chunk_embeddings, vectorizer, tfid
             "chunk_triplet_mapping": chunk_triplet_mapping,
             "chunk_embeddings": chunk_embeddings
         }, f)
+
+    import joblib
 
     joblib.dump({
         "vectorizer": vectorizer,
@@ -245,6 +249,16 @@ def create_chunks_from_triplets(triplets_data, chunk_size=3):
     return chunks
 
 
+def assemble_graph(input_triplets) -> Graph:
+    """Turn a triple list or JSON path into a Graph. No embedding models are loaded."""
+    if isinstance(input_triplets, (str, Path)):
+        with open(input_triplets, "r", encoding="utf-8") as f:
+            triplets_data = json.load(f)
+    else:
+        triplets_data = list(input_triplets)
+    return Graph.from_triples(triplets_data)
+
+
 def build_knowledge_graph(
     input_triplets,
     graph_file="knowledge_graph.pickle",
@@ -262,6 +276,8 @@ def build_knowledge_graph(
     if hasattr(embedding_model, "encode"):
         encoder = embedding_model
     else:
+        from sentence_transformers import SentenceTransformer
+
         encoder = SentenceTransformer(embedding_model)
 
     chunk_data = create_chunks_from_triplets(triplets_data)

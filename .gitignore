@@ -1,4 +1,8 @@
 .venv/
+.venv-313/
+.tools/
+.python/
+.uv-cache/
 __pycache__/
 *.py[cod]
 .env

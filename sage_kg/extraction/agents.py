@@ -64,10 +64,10 @@ class Triple:
 class TripleProcessor:
     """End-to-end SUR extractor: load docs → chunk → three agents → save triples."""
 
-    def __init__(self, llm, data_folder: str, chunk_size: int = 200, overlap: int = 25,
+    def __init__(self, llm, data_folder: Optional[str] = None, chunk_size: int = 200, overlap: int = 25,
                  max_retries: int = 3, output_dir: str = "output"):
         self.llm = llm
-        self.data_folder = Path(data_folder).expanduser().resolve()
+        self.data_folder = Path(data_folder or ".").expanduser().resolve()
         # Paper experiments used 200-token windows / 25-token overlap.
         # This standalone script approximates that with word windows.
         self.chunk_size = chunk_size

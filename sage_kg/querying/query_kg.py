@@ -21,13 +21,9 @@ import argparse
 import re
 import os
 import json
-import numpy as np
 import pickle
-import joblib
 import networkx as nx
 from collections import defaultdict
-from sentence_transformers import SentenceTransformer
-from sklearn.metrics.pairwise import cosine_similarity
 
 from sage_kg.llm import OllamaCompleter
 
@@ -97,6 +93,8 @@ class NetworkXRetriever:
             self.G = pickle.load(f)
 
     def load_chunk_data(self, chunk_file):
+        import numpy as np
+
         with open(chunk_file, "rb") as f:
             data = pickle.load(f)
             self.chunk_triplet_mapping = data["chunk_triplet_mapping"]
@@ -106,6 +104,8 @@ class NetworkXRetriever:
             self.embedding_matrix = np.vstack(embeddings_list)
 
     def load_tfidf_data(self, tfidf_file):
+        import joblib
+
         tfidf_data = joblib.load(tfidf_file)
         self.vectorizer = tfidf_data["vectorizer"]
         self.tfidf_matrix = tfidf_data["tfidf_matrix"]
@@ -113,6 +113,9 @@ class NetworkXRetriever:
 
     def _select_chunks(self, query_text, embedding_model, top_k=5):
         """First-stage filter: top-k triple-chunks by dense similarity to q."""
+        import numpy as np
+        from sklearn.metrics.pairwise import cosine_similarity
+
         query_emb = embedding_model.encode([query_text])[0].reshape(1, -1)
         similarities = cosine_similarity(query_emb, self.embedding_matrix)[0]
         top_indices = np.argsort(similarities)[::-1][:top_k]
@@ -120,6 +123,8 @@ class NetworkXRetriever:
 
     def _vector_search_entities(self, query_text, selected_chunks, embedding_model, top_k=5):
         """Dense seed entities that appear in the selected chunks."""
+        from sklearn.metrics.pairwise import cosine_similarity
+
         query_emb = embedding_model.encode([query_text])[0].reshape(1, -1)
         scores = []
         for node in self.G.nodes:
@@ -134,6 +139,8 @@ class NetworkXRetriever:
 
     def _tfidf_search_entities(self, query_text, selected_chunks, top_k=5):
         """Lexical seed entities (names, rare tokens) inside the same chunks."""
+        from sklearn.metrics.pairwise import cosine_similarity
+
         query_vec = self.vectorizer.transform([query_text])
         similarities = cosine_similarity(query_vec, self.tfidf_matrix)[0]
         scores = []
@@ -221,6 +228,8 @@ def main():
     parser.add_argument("--llm-model", default="qwen2.5:14b", help="Ollama LLM used to write answers")
     parser.add_argument("--max-hops", type=int, default=3, help="Graph expansion depth")
     args = parser.parse_args()
+
+    from sentence_transformers import SentenceTransformer
 
     embedding_model = SentenceTransformer(args.embedding_model)
     llm = OllamaCompleter(args.llm_model, temperature=0)
