@@ -1,17 +1,12 @@
-# Core — same as pyproject.toml. Does not install sentence-transformers.
 crewai[litellm]>=1.0.0,<2
 charset-normalizer
 tqdm
-networkx>=3.0
-
-# Retrieval indexes (optional; also: pip install 'sage-kg[retrieve]')
 sentence-transformers>=3.3.0
 scikit-learn>=1.4
-joblib>=1.3
+networkx>=3.0
 numpy>=1.26
+joblib>=1.3
 pillow>=10.2.0
-
-# Evaluation helpers (optional; also: pip install 'sage-kg[eval]')
 openai
 python-dotenv
 datasets

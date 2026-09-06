@@ -1,5 +1,6 @@
 .venv/
 .venv-313/
+.venv-pypi/
 .tools/
 .python/
 .uv-cache/
@@ -17,3 +18,6 @@ build/
 dist/
 *.egg-info/
 .eggs/
+try_sage_kg.py
+passage.txt
+output_passage/

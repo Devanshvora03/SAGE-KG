@@ -13,58 +13,6 @@ Reported experiments use Qwen2.5 (3B / 7B / 14B) via Ollama, with GPT-4o-mini an
 
 ---
 
-## Library (document → KG)
-
-```bash
-pip install sage-kg
-# Python 3.10–3.13 (CrewAI does not support 3.14+)
-```
-
-Core install does **not** pull `sentence-transformers` / Pillow / torch. Those are only needed for retrieval indexes.
-
-```python
-from sage_kg import SAGEKG, Graph
-
-kg = SAGEKG(model="qwen2.5:14b")  # Ollama tag; daemon must be running
-graph = kg.generate(input_data="Christopher Nolan directed Inception in 2010.")
-print(graph.entities)
-print(graph.relations)  # {('christopher nolan', 'directed', 'inception'), ...}
-
-# folder of .md / .txt files, a single file, or a chat transcript
-graph = kg.generate(input_data="./docs", chunk_size=200)
-graph = kg.generate(input_data=[
-    {"role": "user", "content": "Who directed Inception?"},
-    {"role": "assistant", "content": "Christopher Nolan directed Inception in 2010."},
-])
-
-graph.save("graph.json")
-nx_g = graph.to_nx()
-combined = Graph.aggregate([graph, Graph.load("other.json")])
-```
-
-CLI: `sage-kg generate ./docs -o ./output --model qwen2.5:14b`
-
-Already-extracted triples (no LLM):
-
-```python
-from sage_kg.construction.create_kg import assemble_graph
-
-graph = assemble_graph("triples.json")  # or a list of {subject, predicate, object}
-```
-
-Optional hybrid retrieval (downloads embedding weights):
-
-```bash
-pip install 'sage-kg[retrieve]'
-```
-
-```python
-kg.build_indexes()
-print(kg.ask("Who directed Inception?"))
-```
-
----
-
 ## Pipeline (paper to code)
 
 | Stage | Uncertainty | Agent / module | Code |
@@ -99,15 +47,14 @@ Ablation/                     # stage-order and model-family ablations
 
 ---
 
-## Setup (reproduce the paper scripts)
+## Setup
 
 Python 3.10–3.13 and a running [Ollama](https://ollama.com) daemon.
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-pip install -e .
-pip install -r requirements.txt   # adds retrieval + eval extras
+pip install -r requirements.txt
 ollama pull qwen2.5:14b
 ```
 
